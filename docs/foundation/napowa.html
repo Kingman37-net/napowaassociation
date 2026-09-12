@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAPOWA – National Police Support Alliance</title>
+  <!-- Font Awesome (for drawing‑style icons as placeholders) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8faf8;
+      color: #1e2f23;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      flex-wrap: wrap;
+    }
+    .logo img {
+      height: 55px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #1E6B3A;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #C8A23A;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://i.ibb.co/DPC7LmWL/mkulimalink-home-hero-farmer-harvest.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero-buttons {
+      margin-top: 30px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      margin: 0 10px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .btn-primary {
+      background: #C8A23A;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #b38f2f;
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+    .btn-outline:hover {
+      background: white;
+      color: #1E6B3A;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    h2 {
+      font-size: 2.2rem;
+      color: #1E6B3A;
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    h2:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #C8A23A;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+    .section-sub {
+      text-align: center;
+      color: #4a5a4a;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+
+    /* SUPPORT GRID */
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .support-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .support-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(30,107,58,0.15);
+    }
+    .support-icon {
+      font-size: 3.5rem;
+      color: #C8A23A;
+      margin-bottom: 20px;
+    }
+    .support-card h3 {
+      color: #1E6B3A;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+    .support-card p {
+      color: #4a5a4a;
+      font-size: 0.95rem;
+    }
+
+    /* IMPACT STATS (simplified) */
+    .stats {
+      background: #f0f7f0;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+    .stat-item h3 {
+      font-size: 2.5rem;
+      color: #C8A23A;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #132b1a;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .social a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    .social a:hover {
+      color: #C8A23A;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      nav a {
+        margin: 0 8px;
+        font-size: 0.9rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <h1>Strengthening Those Who Stand Behind the Badge</h1>
+  <p> NATIONAL POLICE WIVES WELFARE ASSOCIATIN  (NAPOWA) – empowering police families, widows, and retired officers for a stronger Kenya.</p>
+  <div class="hero-buttons">
+    <a href="#" class="btn btn-primary">Join Us</a>
+    <a href="#" class="btn btn-outline">Learn More</a>
+  </div>
+</section>
+
+<div class="container">
+  <h2>How We Support Police Families</h2>
+  <div class="section-sub">Five pillars of care – from active duty to retirement</div>
+
+  <div class="support-grid">
+    <div class="support-card">
+      <div class="support-icon"><i class="fas fa-home"></i></div>
+      <h3>Housing</h3>
+      <p>Assisting police families with safe, affordable housing solutions, home improvement grants, and rent subsidies for widows.</p>
+    </div>
+    <div class="support-card">
+      <div class="support-icon"><i class="fas fa-graduation-cap"></i></div>
+      <h3>Education</h3>
+      <p>Scholarships, school fees support, and mentorship programs for children of police officers – ensuring no child is left behind.</p>
+    </div>
+    <div class="support-card">
+      <div class="support-icon"><i class="fas fa-heartbeat"></i></div>
+      <h3>Health Care</h3>
+      <p>Access to medical check-ups, mental health counseling, and hospital fee assistance for police families and retired officers.</p>
+    </div>
+    <div class="support-card">
+      <div class="support-icon"><i class="fas fa-band-aid"></i></div>
+      <h3>Injured Officers</h3>
+      <p>Immediate financial aid, rehabilitation support, and family care packages for officers wounded in the line of duty.</p>
+    </div>
+    <div class="support-card">
+      <div class="support-icon"><i class="fas fa-user-shield"></i></div>
+      <h3>Retired Police</h3>
+      <p>Pension advocacy, social events, welfare programs, and health support for retired officers and their spouses.</p>
+    </div>
+  </div>
+</div>
+
+<section class="stats">
+  <h2 style="color:#1E6B3A;">Our Impact (2014–2026)</h2>
+  <div class="stats-grid">
+    <div class="stat-item"><h3>300+</h3><p>Widows Empowered</p></div>
+    <div class="stat-item"><h3>600+</h3><p>Officers’ Wives Trained</p></div>
+    <div class="stat-item"><h3>230+</h3><p>Businesses Started</p></div>
+    <div class="stat-item"><h3>12</h3><p>Active Branches</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="social">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+  <p style="margin: 20px 0;">NATIONAL POLICE WIVES WELFARE ASSOCIATIN  (NAPOWA) – “Heroes don’t do it alone”</p>
+  <p>📍 Nairobi, Kenya | 📞 +254 728 081 194 | ✉️ napowaaglobeorg@gmail.com</p>
+  <p style="margin-top: 20px;">© 2026 NAPOWA. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | NAPOWA</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f4f6f9;
+  color:#333;
+  line-height:1.6;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("https://i.ibb.co/ynfXVBSt/napowa-hero-contact.png") center/cover no-repeat;
+  color:#fff;
+  padding:90px 20px;
+  text-align:center;
+}
+.hero h1{
+  font-size:2.6rem;
+}
+.hero p{
+  max-width:700px;
+  margin:auto;
+  font-size:1.1rem;
+}
+
+/* CONTAINER */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+/* BOX */
+.box{
+  background:#fff;
+  padding:30px;
+  border-radius:8px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+.box h2{
+  color:#0a4b78;
+}
+
+/* SOCIALS */
+.socials a{
+  display:block;
+  text-decoration:none;
+  color:#0a4b78;
+  margin-bottom:8px;
+  font-weight:bold;
+}
+.socials a:hover{
+  text-decoration:underline;
+}
+
+/* FORM */
+form{
+  display:grid;
+  gap:12px;
+}
+form input, form textarea{
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:4px;
+}
+form textarea{min-height:120px;}
+form button{
+  background:#0a4b78;
+  color:#fff;
+  border:none;
+  padding:12px;
+  cursor:pointer;
+  border-radius:4px;
+}
+form button:hover{
+  background:#08385c;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:#fff;
+  text-align:center;
+  padding:30px 15px;
+  margin-top:50px;
+}
+
+@media(max-width:768px){
+  .grid{grid-template-columns:1fr;}
+}
+</style>
+    
+    
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="index.html"><img src="https://i.ibb.co/YTQdYVGD/NAPOWA-LOGO.png" alt="NAPOWA" height="45"></a>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="police-widows-orphans.html">Widows &amp; Orphans</a></li>
+      <li><a href="membership.html">Membership</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html" class="nav-cta">Donate</a></li>
+    </ul>
+    <div class="hamburger">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+<section class="hero">
+  <h1>Contact NAPOWA</h1>
+  <p>Reach out for inquiries, partnerships, membership & welfare support.</p>
+</section>
+
+<div class="container">
+  <div class="grid">
+
+    <div class="box">
+      <h2>Official Contact Information</h2>
+      <p><strong>National Police Wives Welfare Association (NAPOWA)</strong></p>
+      <p>📍 Nairobi, Kenya</p>
+      <p>📞 Official: +254 728 081 194</p>
+      <p>📞 Chairperson: +254 748 759 055</p>
+      <p>📧 napowaassociation@gmail.com</p>
+
+      <hr>
+
+      <h3>Connect With Us</h3>
+      <div class="socials">
+        <a href=https://www.facebook.com/profilee2e1.html?id=100064446979643%22 target="_blank">Facebook</a>
+        <a href=https://www.tiktok.com/%40proud_wives_.html target="_blank">TikTok</a>
+        <a href=https://www.youtube.com/%40NAPOWA-KE_.html target="_blank">YouTube</a>
+        <a href=https://www.instagram.com/napowa_official/_.html target="_blank">Instagram</a>
+        <a href=https://x.com/wive_police_.html target="_blank">Twitter (X)</a>
+        <a href=https://wa.me/254728081194_.html target="_blank">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="box">
+      <h2>Send Us a Message</h2>
+      <form onsubmit="sendMessage(event)">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+
+
+<script>
+function sendMessage(e){
+  e.preventDefault();
+  alert("Thank you for contacting NAPOWA. We will get back to you shortly.");
+}
+</script>
+
+    
+
+
+    
+
+
+    
+<footer class="napowa-footer">
+  <div class="footer-container">
+    <div class="footer-box">
+      <h3>NAPOWA</h3>
+      <p>National Police Wives Welfare Association — empowering police families, widows, and orphans across Kenya since 2014.</p>
+    </div>
+    <div class="footer-box">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="leadership.html">Leadership</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-box">
+      <h4>Our Programs</h4>
+      <ul>
+        <li><a href="programs.html">All Programs</a></li>
+        <li><a href="training-empowerment.html">Training &amp; Empowerment</a></li>
+        <li><a href="welfare-counseling.html">Welfare &amp; Counseling</a></li>
+        <li><a href="community-outreach.html">Community Outreach</a></li>
+        <li><a href="police-widows-orphans.html">Widows &amp; Orphans</a></li>
+      </ul>
+    </div>
+    <div class="footer-box">
+      <h4>Membership</h4>
+      <ul>
+        <li><a href="join.html">Join NAPOWA</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="portal.html">Member Portal</a></li>
+        <li><a href="orphan-registration.html">Orphan Registration</a></li>
+        <li><a href="welfare-support-request.html">Welfare Request</a></li>
+      </ul>
+    </div>
+    <div class="footer-box">
+      <h4>Contact Us</h4>
+      <p>📍 Nairobi, Kenya</p>
+      <p>📞 +254 728 081 194</p>
+      <p>📧 napowaassociation@gmail.com</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=100064446979643" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/napowa_official/" target="_blank">Instagram</a>
+        <a href="https://x.com/wive_police" target="_blank">X (Twitter)</a>
+        <a href="https://www.youtube.com/@NAPOWA-KE" target="_blank">YouTube</a>
+        <a href="https://wa.me/254728081194" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> National Police Wives Welfare Association (NAPOWA). All Rights Reserved.</p>
+    <p class="legal-links">
+      <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms &amp; Conditions</a>
+    </p>
+  </div>
+</footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

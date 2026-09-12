@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Membership | NAPOWA Foundation</title>
+
+  <style>
+    :root {
+      --primary: #1f4f7a;
+      --secondary: #f4b41a;
+      --light: #f9f9f9;
+      --dark: #222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(rgba(31,79,122,0.85), rgba(31,79,122,0.85)),
+                  url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 110px 20px;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+    }
+
+    .box {
+      background: #fff;
+      padding: 35px;
+      margin-bottom: 35px;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .box h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .box ul {
+      padding-left: 20px;
+    }
+
+    .box ul li {
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      background: var(--secondary);
+      color: #000;
+      padding: 14px 28px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header>
+    <h1>Membership</h1>
+    <p>
+      Join NAPOWA Foundation and be part of a stronger, united, and empowered community.
+      Membership is simple, accessible, and opens doors to support, skills, and community programs.
+    </p>
+  </header>
+
+  <!-- WHO CAN JOIN -->
+  <section>
+    <div class="section-title">
+      <h2>Who Can Join</h2>
+    </div>
+    <div class="box">
+      <p>
+        Membership is open to all women, men, and families who:
+      </p>
+      <ul>
+        <li>Support the objectives of NAPOWA Foundation</li>
+        <li>Commit to positive community engagement</li>
+        <li>Are willing to participate in Foundation programs and activities</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COMMITMENT FEE -->
+  <section>
+    <div class="section-title">
+      <h2>Commitment Fee</h2>
+    </div>
+    <div class="box">
+      <p>
+        Each member contributes a one-time commitment fee of <strong>KSh 10</strong>.
+        This small fee helps sustain our programs and ensures every member is invested in the community.
+      </p>
+    </div>
+  </section>
+
+  <!-- MEMBER RESPONSIBILITIES -->
+  <section>
+    <div class="section-title">
+      <h2>Member Responsibilities</h2>
+    </div>
+    <div class="box">
+      <ul>
+        <li>Actively participate in Foundation activities</li>
+        <li>Promote the Foundation’s values of dignity, trust, and empowerment</li>
+        <li>Recruit new members to strengthen the community network</li>
+        <li>Ensure timely payment of fees and contributions</li>
+        <li>Uphold ethical conduct at all times</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MEMBER BENEFITS -->
+  <section>
+    <div class="section-title">
+      <h2>Benefits of Membership</h2>
+    </div>
+    <div class="box">
+      <ul>
+        <li>Access to welfare and emergency support</li>
+        <li>Participation in savings and interest-free loan programs</li>
+        <li>Eligibility for scholarships, mentorship, and training</li>
+        <li>Connection to a network of empowered police families and communities</li>
+        <li>Opportunities for personal growth and skills development</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- JOIN US / CONTACT -->
+  <section>
+    <div class="section-title">
+      <h2>Join NAPOWA Foundation</h2>
+    </div>
+    <div class="box" style="text-align:center;">
+      <p>
+        Ready to become a member? Reach out via WhatsApp, email, or our contact form. 
+        Your journey to empowerment and community impact begins today.
+      </p>
+      <a href="https://wa.me/254700000000" class="btn">Join via WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © <span id="year"></span> NAPOWA Foundation. All Rights Reserved.
+    </p>
+    <p>
+      Uniting Police Families. Empowering Communities.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

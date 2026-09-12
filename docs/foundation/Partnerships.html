@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Partnerships | NAPOWA Foundation</title>
+
+  <style>
+    :root {
+      --primary: #1f4f7a;
+      --secondary: #f4b41a;
+      --light: #f9f9f9;
+      --dark: #222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(rgba(31,79,122,0.85), rgba(31,79,122,0.85)),
+                  url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 110px 20px;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+    }
+
+    .box {
+      background: #fff;
+      padding: 35px;
+      margin-bottom: 35px;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .box h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .box ul {
+      padding-left: 20px;
+    }
+
+    .box ul li {
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      background: var(--secondary);
+      color: #000;
+      padding: 14px 28px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header>
+    <h1>Partnerships</h1>
+    <p>
+      NAPOWA Foundation collaborates with like-minded organizations to strengthen communities, empower families, and maximize social impact.
+    </p>
+  </header>
+
+  <!-- WHY PARTNER -->
+  <section>
+    <div class="section-title">
+      <h2>Why Partner with Us?</h2>
+    </div>
+    <div class="box">
+      <ul>
+        <li>Access to a wide network of police families and community members</li>
+        <li>Opportunity to participate in impactful social programs</li>
+        <li>Transparent reporting and accountability</li>
+        <li>Co-branding and recognition in community initiatives</li>
+        <li>Joint advocacy for social welfare and empowerment</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHO WE PARTNER WITH -->
+  <section>
+    <div class="section-title">
+      <h2>Our Partners</h2>
+    </div>
+    <div class="box">
+      <ul>
+        <li>Community-Based Organizations (CBOs)</li>
+        <li>Schools and Educational Institutions</li>
+        <li>Churches and Faith-Based Organizations</li>
+        <li>Non-Governmental Organizations (NGOs)</li>
+        <li>Local and international development partners aligned with our mission</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HOW TO PARTNER -->
+  <section>
+    <div class="section-title">
+      <h2>How to Partner</h2>
+    </div>
+    <div class="box" style="text-align:center;">
+      <p>
+        Interested in partnering with NAPOWA Foundation? Connect with us through WhatsApp, email, or our contact form.
+        Let’s build stronger communities together.
+      </p>
+      <a href="https://wa.me/254700000000" class="btn">Contact Us via WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © <span id="year"></span> NAPOWA Foundation. All Rights Reserved.
+    </p>
+    <p>
+      Uniting Police Families. Empowering Communities.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

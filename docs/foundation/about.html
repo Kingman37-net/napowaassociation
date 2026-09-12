@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | NAPOWA Foundation</title>
+
+  <style>
+    :root {
+      --primary: #1f4f7a;
+      --secondary: #f4b41a;
+      --light: #f9f9f9;
+      --dark: #222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(rgba(31,79,122,0.9), rgba(31,79,122,0.9)),
+                  url('https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 110px 20px;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+    }
+
+    .content-box {
+      background: #fff;
+      padding: 35px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
+    }
+
+    .content-box h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .value-card {
+      background: #f4f7fb;
+      padding: 25px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .value-card h4 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header>
+    <h1>About NAPOWA Foundation</h1>
+    <p>
+      Serving communities with dignity by strengthening police families
+      and building trust between the police and the public.
+    </p>
+  </header>
+
+  <!-- BACKGROUND -->
+  <section>
+    <div class="section-title">
+      <h2>Who We Are</h2>
+    </div>
+
+    <div class="content-box">
+      <h3>Our Background</h3>
+      <p>
+        NAPOWA Foundation is a community-focused, non-profit organization
+        established by the Executives of the National Police Wives Welfare
+        Association (NAPOWA). The Foundation was formed to respond to the
+        social, economic, and emotional needs of police families and the
+        communities they serve.
+      </p>
+      <p>
+        Through inclusive programs and collaborative partnerships, NAPOWA
+        Foundation works to promote dignity, trust, empowerment, and
+        sustainable community development.
+      </p>
+    </div>
+  </section>
+
+  <!-- VISION & MISSION -->
+  <section>
+    <div class="section-title">
+      <h2>Our Vision & Mission</h2>
+    </div>
+
+    <div class="content-box">
+      <h3>Our Vision</h3>
+      <p>
+        To build empowered, self-reliant, and cohesive communities founded
+        on dignity, trust, and mutual respect.
+      </p>
+
+      <h3 style="margin-top:25px;">Our Mission</h3>
+      <p>
+        To unite police families and community members through empowerment
+        initiatives that promote social welfare, education, financial
+        inclusion, mental well-being, and sustainable livelihoods.
+      </p>
+    </div>
+  </section>
+
+  <!-- CORE VALUES -->
+  <section>
+    <div class="section-title">
+      <h2>Our Core Values</h2>
+    </div>
+
+    <div class="values">
+      <div class="value-card">
+        <h4>Dignity</h4>
+        <p>We uphold respect, fairness, and human worth in all our work.</p>
+      </div>
+
+      <div class="value-card">
+        <h4>Trust</h4>
+        <p>We promote honesty, transparency, and accountability.</p>
+      </div>
+
+      <div class="value-card">
+        <h4>Empowerment</h4>
+        <p>We strengthen individuals and communities to become self-reliant.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMITMENT -->
+  <section>
+    <div class="section-title">
+      <h2>Our Commitment</h2>
+    </div>
+
+    <div class="content-box">
+      <ul>
+        <li>Strengthening community–police relations</li>
+        <li>Supporting sustainable livelihoods</li>
+        <li>Creating measurable and lasting social impact</li>
+      </ul>
+
+      <p class="signature">
+        — Signed: Jenetrix Orwa
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © <span id="year"></span> NAPOWA Foundation. All Rights Reserved.
+    </p>
+    <p>
+      Building the Bridge Between Police and the Public
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

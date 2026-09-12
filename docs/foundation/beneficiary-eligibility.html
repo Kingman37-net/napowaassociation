@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beneficiary Eligibility | NAPOWA Foundation</title>
+
+  <style>
+    :root {
+      --primary: #1f4f7a;
+      --secondary: #f4b41a;
+      --light: #f9f9f9;
+      --dark: #222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(rgba(31,79,122,0.85), rgba(31,79,122,0.85)),
+                  url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 110px 20px;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+    }
+
+    .box {
+      background: #fff;
+      padding: 35px;
+      margin-bottom: 35px;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .box h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .box ul {
+      padding-left: 20px;
+    }
+
+    .box ul li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header>
+    <h1>Beneficiary Eligibility</h1>
+    <p>
+      NAPOWA Foundation ensures that support reaches those who truly need it.
+      Here’s a clear guide on who qualifies as a beneficiary.
+    </p>
+  </header>
+
+  <!-- ELIGIBILITY CRITERIA -->
+  <section>
+    <div class="section-title">
+      <h2>Eligibility Criteria</h2>
+    </div>
+    <div class="box">
+      <ul>
+        <li>Must be a registered member of NAPOWA Foundation</li>
+        <li>Must have paid the one-time commitment fee of <strong>KSh 10</strong></li>
+        <li>Must be a resident of Kenya</li>
+        <li>Must demonstrate genuine need for financial, educational, or empowerment support</li>
+        <li>Must actively participate in Foundation activities or community service</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ADDITIONAL GUIDANCE -->
+  <section>
+    <div class="section-title">
+      <h2>How to Apply as a Beneficiary</h2>
+    </div>
+    <div class="box">
+      <ul>
+        <li>Ensure your membership registration is complete</li>
+        <li>Contact the Foundation via WhatsApp, email, or office</li>
+        <li>Provide necessary documentation to verify eligibility</li>
+        <li>Participate in any assessment required by the Foundation</li>
+        <li>Approved beneficiaries will receive support according to Foundation programs</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © <span id="year"></span> NAPOWA Foundation. All Rights Reserved.
+    </p>
+    <p>
+      Uniting Police Families. Empowering Communities.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

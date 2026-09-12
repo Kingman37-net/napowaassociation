@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | NAPOWA Foundation</title>
+
+  <style>
+    :root {
+      --primary: #1f4f7a;
+      --secondary: #f4b41a;
+      --light: #f9f9f9;
+      --dark: #222;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(rgba(31,79,122,0.85), rgba(31,79,122,0.85)),
+                  url('https://images.unsplash.com/photo-1581092331565-4f08d8f6b3cb') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 110px 20px;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--primary);
+    }
+
+    .box {
+      background: #fff;
+      padding: 35px;
+      margin-bottom: 35px;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .box h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .contact-list li {
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+    }
+
+    .btn {
+      background: var(--secondary);
+      color: #000;
+      padding: 14px 28px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 60px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header>
+    <h1>Contact Us</h1>
+    <p>
+      We’d love to hear from you! Reach out to NAPOWA Foundation for membership, partnership, or general inquiries.
+    </p>
+  </header>
+
+  <!-- CONTACT INFO -->
+  <section>
+    <div class="section-title">
+      <h2>Our Contact Information</h2>
+    </div>
+    <div class="box">
+      <ul class="contact-list">
+        <li><strong>Phone / WhatsApp:</strong> <a href="https://wa.me/254700000000">+254 700 000 000</a></li>
+        <li><strong>Email:</strong> <a href="mailto:info@napowafoundation.org">info@napowafoundation.org</a></li>
+        <li><strong>Physical Address:</strong> Nairobi, Kenya (Office address will be updated)</li>
+        <li><strong>Social Media:</strong>
+          <ul>
+            <li><a href="https://facebook.com/napowafoundation" target="_blank">Facebook</a></li>
+            <li><a href="https://twitter.com/napowafoundation" target="_blank">Twitter</a></li>
+            <li><a href="https://instagram.com/napowafoundation" target="_blank">Instagram</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT BUTTON -->
+  <section>
+    <div class="section-title">
+      <h2>Reach Out Now</h2>
+    </div>
+    <div class="box" style="text-align:center;">
+      <p>
+        For faster response, contact us directly on WhatsApp. Let’s start building stronger communities together!
+      </p>
+      <a href="https://wa.me/254700000000" class="btn">Message Us on WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © <span id="year"></span> NAPOWA Foundation. All Rights Reserved.
+    </p>
+    <p>
+      Uniting Police Families. Empowering Communities.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

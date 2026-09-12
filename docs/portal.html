@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAPOWA Membership Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .header {
+            background: #1e3c72;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2a5298;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #2a5298;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            margin-top: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .link-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .link-group a {
+            color: #2a5298;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        .link-group a:hover {
+            text-decoration: underline;
+        }
+
+        .alert {
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .dashboard-nav {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dashboard-nav span {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .dashboard-content {
+            padding: 30px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .welcome-box {
+            background: #e7f3ff;
+            border-left: 4px solid #2a5298;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        .welcome-box h2 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .welcome-box p {
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .profile-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 25px;
+        }
+
+        .profile-section h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 18px;
+            border-bottom: 2px solid #2a5298;
+            padding-bottom: 10px;
+        }
+
+        .profile-item {
+            display: flex;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .profile-item:last-child {
+            border-bottom: none;
+        }
+
+        .profile-label {
+            font-weight: 600;
+            width: 200px;
+            color: #555;
+        }
+
+        .profile-value {
+            flex: 1;
+            color: #333;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-approved {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-rejected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .resources-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 25px;
+        }
+
+        .resources-section h3 {
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-size: 18px;
+            border-bottom: 2px solid #2a5298;
+            padding-bottom: 10px;
+        }
+
+        .resources-list {
+            list-style: none;
+        }
+
+        .resources-list li {
+            padding: 12px;
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border-left: 3px solid #2a5298;
+        }
+
+        .resources-list li:before {
+            content: "📄 ";
+            margin-right: 10px;
+        }
+
+        .footer {
+            background: #1e3c72;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+    
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="index.html"><img src="https://i.ibb.co/YTQdYVGD/NAPOWA-LOGO.png" alt="NAPOWA" height="45"></a>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="police-widows-orphans.html">Widows &amp; Orphans</a></li>
+      <li><a href="membership.html">Membership</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html" class="nav-cta">Donate</a></li>
+    </ul>
+    <div class="hamburger">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+    <div class="container">
+        <div class="header">
+            <h1>NAPOWA Membership Portal</h1>
+            <p>National Police Wives Welfare Association</p>
+        </div>
+
+        <!-- Login Page -->
+        <div id="loginPage" class="content">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #1e3c72;">Member Login</h2>
+            <div id="loginMessage"></div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <div class="link-group">
+                <a href=_.html#" id="showRegister">Create Account</a>
+                <a href=_.html#" id="showForgotPassword">Forgot Password?</a>
+            </div>
+        </div>
+
+        <!-- Registration Page -->
+        <div id="registerPage" class="content hidden">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #1e3c72;">Membership Application</h2>
+            <div id="registerMessage"></div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="regName" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="regPassword" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="regConfirmPassword" required>
+                </div>
+                <div class="form-group">
+                    <label>Membership Type</label>
+                    <select id="regMembershipType" required>
+                        <option value="">Select Type</option>
+                        <option value="Regular Member">Regular Member</option>
+                        <option value="Honorary Member">Honorary Member</option>
+                        <option value="Associate Member">Associate Member</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>County / Region</label>
+                    <input type="text" id="regCounty" required>
+                </div>
+                <button type="submit" class="btn">Submit Application</button>
+                <button type="button" class="btn btn-secondary" id="backToLogin">Back to Login</button>
+            </form>
+        </div>
+
+        <!-- Forgot Password Page -->
+        <div id="forgotPasswordPage" class="content hidden">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #1e3c72;">Password Recovery</h2>
+            <div id="forgotMessage"></div>
+            <form id="forgotPasswordForm">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="forgotEmail" required>
+                </div>
+                <button type="submit" class="btn">Reset Password</button>
+                <button type="button" class="btn btn-secondary" id="backToLoginFromForgot">Back to Login</button>
+            </form>
+        </div>
+
+        <!-- Dashboard Page -->
+        <div id="dashboardPage" class="hidden">
+            <div class="dashboard-nav">
+                <span id="dashboardUserName">Member Dashboard</span>
+                <button class="btn" id="logoutBtn" style="width: auto; padding: 10px 20px;">Logout</button>
+            </div>
+            <div class="dashboard-content">
+                <div class="welcome-box">
+                    <h2>Welcome to the NAPOWA Members Dashboard</h2>
+                    <p>Access is restricted to verified members only.</p>
+                </div>
+
+                <div class="profile-section">
+                    <h3>Your Profile Information</h3>
+                    
+                    <div class="profile-item">
+                        <div class="profile-label">Full Name:</div>
+                        <div class="profile-value" id="profileName">-</div>
+                    </div>
+
+                    <div class="profile-item">
+                        <div class="profile-label">Email:</div>
+                        <div class="profile-value" id="profileEmail">-</div>
+                    </div>
+
+                    <div class="profile-item">
+                        <div class="profile-label">Membership Type:</div>
+                        <div class="profile-value" id="profileType">-</div>
+                    </div>
+
+                    <div class="profile-item">
+                        <div class="profile-label">County / Region:</div>
+                        <div class="profile-value" id="profileCounty">-</div>
+                    </div>
+
+                    <div class="profile-item">
+                        <div class="profile-label">Status:</div>
+                        <div class="profile-value" id="profileStatus">-</div>
+                    </div>
+
+                    <div class="profile-item">
+                        <div class="profile-label">Application Date:</div>
+                        <div class="profile-value" id="profileDate">-</div>
+                    </div>
+                </div>
+
+                <div class="resources-section">
+                    <h3>Member Resources</h3>
+                    <ul class="resources-list">
+                        <li>Official NAPOWA announcements</li>
+                        <li>Welfare assistance programs</li>
+                        <li>Members-only circulars</li>
+                        <li>Annual reports & summaries</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>Logout Notice:</strong> Always log out of your account after completing your session to ensure your personal information remains secure.
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2014 – 2026 National Police Wives Welfare Association (NAPOWA)</p>
+            <p>All rights reserved</p>
+        </div>
+    </div>
+
+    <script>
+        // In-memory user storage (note: data will be lost on page refresh)
+        let users = {};
+        let currentUser = null;
+
+        // Page navigation
+        const pages = {
+            login: document.getElementById('loginPage'),
+            register: document.getElementById('registerPage'),
+            forgot: document.getElementById('forgotPasswordPage'),
+            dashboard: document.getElementById('dashboardPage')
+        };
+
+        function showPage(pageName) {
+            Object.values(pages).forEach(page => page.classList.add('hidden'));
+            pages[pageName].classList.remove('hidden');
+        }
+
+        // Show message function
+        function showMessage(elementId, message, type) {
+            const messageDiv = document.getElementById(elementId);
+            messageDiv.innerHTML = `<div class="alert alert-${type}">${message}</div>`;
+            setTimeout(() => {
+                messageDiv.innerHTML = '';
+            }, 5000);
+        }
+
+        // Login form handler
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            if (users[email] && users[email].password === password) {
+                currentUser = users[email];
+                loadDashboard();
+                showPage('dashboard');
+                document.getElementById('loginEmail').value = '';
+                document.getElementById('loginPassword').value = '';
+            } else {
+                showMessage('loginMessage', 'Invalid email or password.', 'error');
+            }
+        });
+
+        // Registration form handler
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            const confirmPassword = document.getElementById('regConfirmPassword').value;
+            const membershipType = document.getElementById('regMembershipType').value;
+            const county = document.getElementById('regCounty').value;
+
+            // Validation
+            if (password !== confirmPassword) {
+                showMessage('registerMessage', 'Passwords do not match.', 'error');
+                return;
+            }
+
+            if (users[email]) {
+                showMessage('registerMessage', 'An account with this email already exists.', 'error');
+                return;
+            }
+
+            // Create new user
+            users[email] = {
+                name: name,
+                email: email,
+                password: password,
+                membershipType: membershipType,
+                county: county,
+                status: 'Pending',
+                applicationDate: new Date().toLocaleDateString()
+            };
+
+            showMessage('registerMessage', 'Application submitted successfully! Please login to continue.', 'success');
+            
+            // Clear form
+            document.getElementById('registerForm').reset();
+            
+            // Redirect to login after 2 seconds
+            setTimeout(() => {
+                showPage('login');
+            }, 2000);
+        });
+
+        // Forgot password form handler
+        document.getElementById('forgotPasswordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('forgotEmail').value;
+
+            if (users[email]) {
+                showMessage('forgotMessage', 'Password reset instructions have been sent to your email.', 'success');
+                document.getElementById('forgotEmail').value = '';
+                setTimeout(() => {
+                    showPage('login');
+                }, 2000);
+            } else {
+                showMessage('forgotMessage', 'No account found with this email address.', 'error');
+            }
+        });
+
+        // Load dashboard with user data
+        function loadDashboard() {
+            if (!currentUser) return;
+
+            document.getElementById('dashboardUserName').textContent = `Welcome, ${currentUser.name}`;
+            document.getElementById('profileName').textContent = currentUser.name;
+            document.getElementById('profileEmail').textContent = currentUser.email;
+            document.getElementById('profileType').textContent = currentUser.membershipType;
+            document.getElementById('profileCounty').textContent = currentUser.county;
+            document.getElementById('profileDate').textContent = currentUser.applicationDate;
+
+            // Set status badge
+            const statusElement = document.getElementById('profileStatus');
+            const statusClass = currentUser.status === 'Approved' ? 'status-approved' : 
+                              currentUser.status === 'Rejected' ? 'status-rejected' : 'status-pending';
+            statusElement.innerHTML = `<span class="status-badge ${statusClass}">${currentUser.status}</span>`;
+        }
+
+        // Logout handler
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            currentUser = null;
+            showPage('login');
+            showMessage('loginMessage', 'You have been logged out successfully.', 'success');
+        });
+
+        // Navigation links
+        document.getElementById('showRegister').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('register');
+        });
+
+        document.getElementById('showForgotPassword').addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('forgot');
+        });
+
+        document.getElementById('backToLogin').addEventListener('click', function() {
+            showPage('login');
+        });
+
+        document.getElementById('backToLoginFromForgot').addEventListener('click', function() {
+            showPage('login');
+        });
+    </script>
+
+
+    
+
+
+    
+<footer class="napowa-footer">
+  <div class="footer-container">
+    <div class="footer-box">
+      <h3>NAPOWA</h3>
+      <p>National Police Wives Welfare Association — empowering police families, widows, and orphans across Kenya since 2014.</p>
+    </div>
+    <div class="footer-box">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="leadership.html">Leadership</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-box">
+      <h4>Our Programs</h4>
+      <ul>
+        <li><a href="programs.html">All Programs</a></li>
+        <li><a href="training-empowerment.html">Training &amp; Empowerment</a></li>
+        <li><a href="welfare-counseling.html">Welfare &amp; Counseling</a></li>
+        <li><a href="community-outreach.html">Community Outreach</a></li>
+        <li><a href="police-widows-orphans.html">Widows &amp; Orphans</a></li>
+      </ul>
+    </div>
+    <div class="footer-box">
+      <h4>Membership</h4>
+      <ul>
+        <li><a href="join.html">Join NAPOWA</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="portal.html">Member Portal</a></li>
+        <li><a href="orphan-registration.html">Orphan Registration</a></li>
+        <li><a href="welfare-support-request.html">Welfare Request</a></li>
+      </ul>
+    </div>
+    <div class="footer-box">
+      <h4>Contact Us</h4>
+      <p>📍 Nairobi, Kenya</p>
+      <p>📞 +254 728 081 194</p>
+      <p>📧 napowaassociation@gmail.com</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=100064446979643" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/napowa_official/" target="_blank">Instagram</a>
+        <a href="https://x.com/wive_police" target="_blank">X (Twitter)</a>
+        <a href="https://www.youtube.com/@NAPOWA-KE" target="_blank">YouTube</a>
+        <a href="https://wa.me/254728081194" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> National Police Wives Welfare Association (NAPOWA). All Rights Reserved.</p>
+    <p class="legal-links">
+      <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms &amp; Conditions</a>
+    </p>
+  </div>
+</footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
